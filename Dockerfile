@@ -19,4 +19,5 @@
   COPY --from=build /app /app
   WORKDIR /app
   ENV GOOGLE_API_KEY=${GOOGLE_API_KEY}
-  CMD ["/venv/bin/python3", "/app/app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.enableCors=false"]
+  ENV PATH="/venv/bin:$PATH"
+  CMD ["/venv/bin/streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.enableCors=false"]
