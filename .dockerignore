@@ -5,3 +5,7 @@ __pycache__/
 *.pyd
 .git/
 .gitignore
+numpy/  # Add this line
+*.egg-info/
+build/
+dist/

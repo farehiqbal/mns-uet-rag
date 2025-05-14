@@ -10,7 +10,7 @@
       /venv/bin/pip install --disable-pip-version-check --upgrade pip setuptools wheel && \
       apt-get clean && rm -rf /var/lib/apt/lists/*
   COPY requirements.txt .
-  RUN /venv/bin/pip install --disable-pip-version-check --no-cache-dir -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+  RUN /venv/bin/pip install --disable-pip-version-check --no-cache-dir --no-build-isolation -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
   COPY . .
 
   # Final stage
