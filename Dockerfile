@@ -20,4 +20,4 @@
   WORKDIR /app
   ENV GOOGLE_API_KEY=${GOOGLE_API_KEY}
   ENV PATH="/venv/bin:$PATH"
-  CMD ["/venv/bin/streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.enableCors=false"]
+  CMD ["/venv/bin/sh", "-c", "streamlit run app.py --server.port=${PORT} --server.address=0.0.0.0 --server.enableCors=false"]
